@@ -1,4 +1,11 @@
 # -*- coding: utf-8 -*-
+#* Spotify Wiki - Gestión de dataset spotify_songs.csv
+#* Atributos consulta de datos en la APi de wikipedia
+#* Derecho de autor (C) 2020 Hugo Ramírez.
+#*
+#* Para mayor información sobre los términos de la licencia consulte:
+#* http://www.gnu.org/licenses/gpl-2.0.html.
+
 from flask import Flask, render_template, url_for, request, make_response, Response, jsonify
 from flask.views import View
 import json
@@ -24,7 +31,7 @@ def Index():
         def __init__(self, arg):
             self.df = pd.read_csv(arg)
             self.df = self.df.query('track_popularity == 0')
-        
+
         def duplicados(self):
             df = self.df
             self.verifica = df['track_id'].duplicated()
