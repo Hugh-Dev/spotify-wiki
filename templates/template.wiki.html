@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  {% block head %}
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="static/css/bootstrap.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="static/fontawesome-free/css/all.min.css" crossorigin="anonymous">
+
+
+  <title>Spotify | app</title>
+  {% endblock %}
+</head>
+
+<body>
+<!-- content -->
+{% block content %}
+<div class="container-fluid">
+  <div class="row justify-content-md-center">
+    <div class="col-sm-12">
+      <br>
+      <a href="/" class="text-decoration-none"><i class="fas fa-arrow-circle-left fa-2x text-muted"></i></a>
+    </div>
+    <div class="col-sm-6">
+      <div class="col-md-auto" style="margin-top:50px;">
+        <h4 class="text-muted">wikipedia:</h4>
+          <div class="card">
+            <div class="card-body">
+              <p class="text-justify">
+                {{summary}}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+  <!-- JavaScript -->
+  <script src="static/jquery/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
+  <script src="static/js/popper.min.js" crossorigin="anonymous"></script>
+  <script src="static/js/bootstrap.min.js" crossorigin="anonymous"></script>
+{% endblock %}
+</body>
+</html>

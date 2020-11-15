@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {% block head %}
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="static/css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/fontawesome-free/css/all.min.css" crossorigin="anonymous">
+
+
+    <title>Beetle | app</title>
+    {% endblock %}
+  </head>
+  <body>
+    <!-- content -->
+    {% block content %}
+    <div class="container-fluid">
+      <div class="row justify-content-md-center">
+        <div class="col-md-auto" style="margin-top:50px;">
+          <h4 class="text-muted">Insert thought:</h4>
+          <form action="/thought" method="post">
+            <div class="form-group">
+              <input type="text" class="form-control form-control-sm" name="author" placeholder="author..." autocomplete="off" autofocus>
+            </div>
+            <div class="form-group">
+              <textarea class="form-control form-control-sm" placeholder="thought..." name="text" rows="8" cols="80" autocomplete="off" autofocus></textarea>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control form-control-sm" name="tag_one" placeholder="tag one..." autocomplete="off" autofocus>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control form-control-sm" name="tag_two" placeholder="tag two..." autocomplete="off" autofocus>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control form-control-sm" name="tag_three" placeholder="tag three..." autocomplete="off" autofocus>
+            </div>
+            <div class="form-group">
+              <button type="submit" class="btn-outline-success btn-sm form-control">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    {% endblock %}
+    {% block scripts %}
+    <!-- JavaScript -->
+    <script src="static/jquery/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
+    <script src="static/js/popper.min.js" crossorigin="anonymous"></script>
+    <script src="static/js/bootstrap.min.js" crossorigin="anonymous"></script>
+    {% endblock %}
+  </body>
+</html>

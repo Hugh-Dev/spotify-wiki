@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {% block head %}
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="static/css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/fontawesome-free/css/all.min.css" crossorigin="anonymous">
+
+
+    <title>Spotify | app</title>
+    {% endblock %}
+  </head>
+  <body>
+    <!-- content -->
+    {% block content %}
+    {{context}}
+    <div class="container-fluid">
+      <div class="row justify-content-md-center">
+        <div class="col-md-auto" style="margin-top:50px;">
+          <h4 class="text-muted">choose artist name:</h4>
+          <form action="/artist" method="post">
+            <div class="form-group">
+              <select class="form-control form-control-sm" id="Selectname" name="choosename" required="true">
+                <option name="" value="">...</option>
+                {% for name in artist %}
+                  <option name="artist_name" id="artist_name" value="{{name}}">{{name}}</option>
+                {% endfor %}
+              </select>
+              <small id="textHelp" class="form-text text-muted">please, choose artist name.</small>
+            </div>
+            <div class="form-group">
+              <button type="submit" class="btn-outline-secondary btn-sm form-control">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    {% endblock %}
+    {% block scripts %}
+    <!-- JavaScript -->
+    <script src="static/jquery/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
+    <script src="static/js/popper.min.js" crossorigin="anonymous"></script>
+    <script src="static/js/bootstrap.min.js" crossorigin="anonymous"></script>
+    {% endblock %}
+  </body>
+</html>
